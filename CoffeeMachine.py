@@ -48,8 +48,8 @@ def is_resources_sufficient(order_ingredients):
 def is_money_sufficient(order_cost):
     quarters = 0.25 * int(input("how many quarters?: "))
     dimes = 0.10 * int(input("how many dimes?: "))
-    nickles = 0.5 * int(input("how many nickles?: "))
-    pennies = 0.1 * int(input("how many pennies?: "))
+    nickles = 0.05 * int(input("how many nickles?: "))
+    pennies = 0.01 * int(input("how many pennies?: "))
     total_money = quarters + dimes + nickles + pennies
     if MENU[choice]["cost"] > total_money:
         print("no enough coins")
@@ -81,4 +81,6 @@ while is_on:
             resources["coffee"] -= drink["ingredients"]["coffee"]
             if drink == "latte" or drink == "cappuccino":
                 resources["milk"] -= drink["ingredients"]["milk"]
+            profit += drink['cost']
+
 
